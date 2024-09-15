@@ -1,0 +1,28 @@
+LEETCODE-80
+package stringAssignment.topInterview;
+public class leetcodeDulpicate2 {
+    public static void main(String[] args) {
+        int[] nums={1,1,1,2,2,3};
+        nums=remove(nums);
+        for(int i=0;i<nums.length;i++){
+            System.out.print(nums[i]+" ");
+        }
+    }
+    public static int[] remove(int[] nums){
+        int count=0;
+        int[] newNums=new int[nums.length];
+        for(int i=0;i<nums.length;i++){
+            if(i<2 || nums[i]!=nums[i-2]){
+                newNums[count]=nums[i];
+                count++;
+            }
+        }
+    int[] res=new int[count];
+    System.arraycopy(newNums, 0, res, 0, count);
+    return res;
+}
+}
+//Input:[1,1,1,2,2,3]
+//Output:[1,1,2,2]
+Approach:
+Only we have to execute the occurence of aly elements two times only otherwise do not print it because we are unable to change the array length and leave the remaining spaces as usual and need not to affect our code.
