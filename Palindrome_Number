@@ -1,0 +1,37 @@
+LLETCODE-9
+class Solution {
+    public boolean isPalindrome(int x) {
+        int temp=x;
+        int rev=0;
+        while(x>0){
+            int digit=x%10;
+            rev=(rev*10)+digit;
+            x=x/10;
+        }
+        if(rev==temp){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+Input: 121
+Output: 121
+Approach:
+For reducing units digit:
+digit=121%10=1
+rev=(rev*10)+digit i.e., (0*10)+1=0+1=1
+x=x/10=121/10=12
+for reducing second digit:
+digit=12%10=2
+rev=(1*10)+digit=10+2=12
+x=12/10=1
+for reducing third digit i.e., hundreads digit here:
+digit=1%10=1
+rev=(12*10)+digit=120+1=121
+x=1/10=0
+then stops  iteration and output is validated as 121 correctly.
+
+
+
