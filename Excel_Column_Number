@@ -1,0 +1,27 @@
+public class excelColumnNumber {
+    public static int toTitle(String columnTitle) {
+        int result = 0;
+        for (int i = 0; i < columnTitle.length(); i++) {
+            result = result * 26 + (columnTitle.charAt(i) - 'A' + 1);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        String columnTitle = "AB";
+        int columnNumber = toTitle(columnTitle);
+        System.out.println(columnNumber);
+        System.out.println("The column title '" + columnTitle + "' corresponds to column number " + columnNumber);
+    }
+}
+
+input:
+A->1
+b->2
+"
+"
+Z->26
+
+
+AB->27
+like this we have to print the o/p
